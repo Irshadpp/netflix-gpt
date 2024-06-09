@@ -2,17 +2,20 @@ import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./Login";
 import Browser from "./Browser";
+import Error from "./Error";
 
 const Body = () => {
   const appRouter = createBrowserRouter([
+      {
+        path: "/",
+        element: <Login />,
+        errorElement: <Error/>
+      },
     {
-      path: "/",
+      path: "/browser",
       element: <Browser/>,
     },
-    {
-      path: "/login",
-      element: <Login />,
-    },
+    
   ]);
 
 
