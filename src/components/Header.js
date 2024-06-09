@@ -4,6 +4,7 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addUser, removeUser } from '../utils/userSlice';
+import { NETFLIX_LOGO } from '../utils/constants';
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -35,7 +36,7 @@ signOut(auth).then(() => {
     }
   return (
     <div className='absolute w-screen justify-between flex bg-gradient-to-b from-black'>
-        <img className='w-48 mx-32' src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="logo" />
+        <img className='w-48 mx-32' src={NETFLIX_LOGO} alt="logo" />
         {user && (
         <div className='flex'>
         <p className='text-white text-xl font-bold my-5 mx-2'>{user?.displayName}</p>

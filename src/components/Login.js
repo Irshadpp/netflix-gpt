@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfi
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { BG_IMAGE, USER_LOGO } from "../utils/constants";
 
 const Login = () => {
     const dispatch = useDispatch();
@@ -42,7 +43,7 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           updateProfile(user, {
-            displayName: name.current.value, photoURL: "https://www.pngitem.com/pimgs/m/30-307416_profile-icon-png-image-free-download-searchpng-employee.png"
+            displayName: name.current.value, photoURL: USER_LOGO
                   }).then(() => {
             const { uid, email, displayName, photoURL} = auth.currentUser;
             dispatch(addUser({uid:uid, email:email, displayName: displayName, photoURL: photoURL}));
@@ -74,7 +75,7 @@ signInWithEmailAndPassword(auth, email.current.value, password.current.value)
       <div className="absolute">
       <Header/>
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/cacfadb7-c017-4318-85e4-7f46da1cae88/e43aa8b1-ea06-46a5-abe3-df13243e718d/IN-en-20240603-popsignuptwoweeks-perspective_alpha_website_small.jpg"
+          src={BG_IMAGE}
           alt="bgImage"
         />
       </div>
