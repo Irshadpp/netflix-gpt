@@ -6,11 +6,11 @@ import VidoBackground from './VideoBackground';
 const MainContainer = () => {
     const movies = useSelector((store) => store.movie?.nowPlayingMovies);
     if(!movies) return 
-    const {original_title, overview} =  movies[0]
+    const {original_title, overview, id} =  movies[0]
   return (
     <div>
       <VideoTitle title={original_title} overview={overview}/>
-      <VidoBackground/>
+      <VidoBackground movieId={id}/>
     </div>
   )
 }
