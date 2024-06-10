@@ -9,8 +9,8 @@ const VidoBackground = ({movieId}) => {
   return (
     <div className='w-screen'>
     <iframe
-        className='w-screen aspect-video'
-        src={`https://www.youtube.com/embed/Kdr5oedn7q8?autoplay=0&mute=1${trailerVideo?.key ? '&' + trailerVideo.key : ''}`}
+        className='w-screen h-[620px]'
+        src={`https://www.youtube.com/embed/Kdr5oedn7q8?autoplay=1&mute=1${trailerVideo?.key ? '&' + trailerVideo.key : ''}`}
         allow='autoplay; encrypted-media'
         title="YouTube video player"
         frameBorder="0"
